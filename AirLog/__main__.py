@@ -1,11 +1,11 @@
 import data as csv
 
-__version__ = "0.1"
+__version__ = "0.2"
 callsign_endpoint = "http://hamcall.net/call?callsign="
 
 print(f"AirLog Version: {__version__}")
 
-questions = ["Callsign", "Name", "Location", "Comm type", "Notes"]
+questions = ["Callsign", "Name", "Location", "Comm type", "Notes", "signal ( x/10 )"]
 
 data = {}
 

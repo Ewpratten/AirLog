@@ -12,6 +12,7 @@ def write(heading, data):
 		line += f"{data[point]},"
 	line += str(datetime.datetime.now().time()).split(".")[0][:-3]+","
 	with open("./logs/"+ str(datetime.datetime.today().strftime('%Y-%m-%d')) + ".csv", "w") as f:
-		f.writelines(line[:-1]+"\n")
+		file = f.read()
+		f.writelines(str(file) + line[:-1]+"\n")
 		f.close()
 		print("Log updated.")
