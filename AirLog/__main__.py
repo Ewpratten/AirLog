@@ -1,7 +1,9 @@
 import data as csv
+import datetime
 
 __version__ = "0.2"
 callsign_endpoint = "http://hamcall.net/call?callsign="
+output_file_path = "../logs/" + str(datetime.datetime.today().strftime('%Y-%m-%d')) + ".csv"
 
 print(f"AirLog Version: {__version__}")
 
@@ -17,5 +19,5 @@ while 0 < len(questions):
 			data[question] = answer
 			questions.remove(question)
 
-headings = csv.toHeadings(data)
-csv.write(headings, data)
+headings = csv.toHeadings(data, output_file_path)
+csv.write(data, output_file_path)
